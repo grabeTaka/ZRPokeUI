@@ -1,0 +1,84 @@
+{
+  "name": "sptest",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@chakra-ui/icons": "^2.0.19",
+    "@chakra-ui/react": "^2.7.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/node": "^16.18.30",
+    "@types/papaparse": "^5.3.7",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "@typescript-eslint/parser": "^5.60.0",
+    "axios": "^1.6.2",
+    "cypress": "^12.12.0",
+    "cypress-file-upload": "^5.0.8",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "framer-motion": "^10.12.16",
+    "papaparse": "^5.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0",
+    "react-router-dom": "^6.12.1",
+    "react-scripts": "5.0.1",
+    "typescript": "*",
+    "use-context-selector": "^1.4.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "dev": "PORT=4000 react-scripts start",
+    "start": "PORT=4000 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint . --fix --max-warnings=0",
+    "format": "prettier . --write"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "main": "index.js",
+  "repository": "git@github.com:grabeTaka/default-react-project.git",
+  "author": "Gabriel Takahashi <gabrltakahashi@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@testing-library/react": "^14.1.2",
+    "@types/jest": "^29.5.10",
+    "@types/lodash.debounce": "^4.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "eslint-config-standard-with-typescript": "^35.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.32.2",
+    "jest": "^27.5.1",
+    "jest-environment-jsdom": "^29.7.0",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8"
+  },
+  "lint-staged": {
+    "*.ts*": "eslint --fix ",
+    "*.{ts*,css,md,html,json}": "prettier --cache --write"
+  }
+}
