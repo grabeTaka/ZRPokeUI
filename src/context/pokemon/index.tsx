@@ -47,7 +47,7 @@ const PokemonProvider: React.FC<importFilesContextProps> = ({ children }) => {
 
     const setInputVariable = (pokemon: string) => {
         setSearch(pokemon)
-        
+        setAbilities([])
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -7,7 +7,7 @@ interface abilityHeaderInterface {
 export default function abilityHeader(props: abilityHeaderInterface) {
     return (
         <Grid
-            templateColumns="repeat(3, 1fr)"
+            templateColumns={['repeat(1, 1fr)', 'repeat(3, 1fr)']}  
             gap={6}
             alignItems="center"
             justifyItems="center"

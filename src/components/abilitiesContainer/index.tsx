@@ -10,9 +10,9 @@ import { useListAbilities } from '../../hooks/useListPokemon/useListPokemon'
 export default function abilitiesContainer() {
     const { abilities, search, emptySearch } = useListAbilities()
 
-    if (emptySearch) {
+    if (emptySearch || (abilities && abilities.length === 0)) {
         return <StartJorney />
-    } else if (!emptySearch && !abilities) {
+    } else if (!emptySearch && (!abilities )) {
         return (
             <>
                 <PokemonNotFound />
