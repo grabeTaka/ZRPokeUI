@@ -5,7 +5,7 @@ const {
 } = process.env
 
 const api = axios.create({
-    baseURL: REACT_APP_API_ENDPOINT || 'http://localhost:3000/api',
+    baseURL: REACT_APP_API_ENDPOINT || 'https://zrpokeapi.onrender.com',
 })
 
 
