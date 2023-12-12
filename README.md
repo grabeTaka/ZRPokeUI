@@ -51,3 +51,4 @@ To run tests please run follow command:
 ## Future improvements
 - Add Cypress to end-to-end tests.
 - Add storybook to document the components.
+- Add Husky to run tests and lint before push
