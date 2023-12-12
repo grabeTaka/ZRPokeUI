@@ -7,10 +7,8 @@ class PokemonService implements pokemonServiceInterface {
 
         try {
             const response = await api.get(`/pokemons/${pokemonName}`)
-            console.info(response)
             return response.data
         } catch (error: any) {
-            console.info(error.response)
             return {status: error.response.data.code, message: error.response.data.message}
         }
     }
