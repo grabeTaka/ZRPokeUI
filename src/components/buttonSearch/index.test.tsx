@@ -5,7 +5,7 @@ const handleOnSubmit = () => {
     return
 }
 test('checks if button is disabled', () => {
-    const { getByRole } = render(<ButtonUpload  handleOnSubmit={handleOnSubmit} />)
+    const { getByRole } = render(<ButtonUpload  handleOnSubmit={handleOnSubmit} loading={true} />)
     const button = getByRole('button')
 
     expect(button).toBeDisabled()

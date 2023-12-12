@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import { Box, Flex } from '@chakra-ui/react'
 
 export default function navigationBar() {

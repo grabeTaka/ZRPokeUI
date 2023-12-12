@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable react-hooks/rules-of-hooks */
 import {
     Flex,
@@ -6,12 +5,12 @@ import {
 } from '@chakra-ui/react'
 
 import SearchInput from '../searchInput/index'
-import ButtonSeatch from '../buttonSearch/index'
+import ButtonSearch from '../buttonSearch/index'
 
 import { useSearchPokemon } from '../../hooks/useSearchPokemon/useSearchPokemon'
 
 export default function headerAction() {
-    const { handleChangeInput, handleOnSubmit } = useSearchPokemon()
+    const { handleChangeInput, handleOnSubmit, loading } = useSearchPokemon()
     
     return (
         <Box width="100%" mb={10}>
@@ -20,7 +19,7 @@ export default function headerAction() {
                     <SearchInput handleChangeInput={handleChangeInput}/>
                 </Box>
                 <Box flexBasis={{ base: '100%', md: '30%' }} display="flex" justifyContent="flex-end">
-                    <ButtonSeatch handleOnSubmit={handleOnSubmit}/>
+                    <ButtonSearch handleOnSubmit={handleOnSubmit} loading={loading}/>
                 </Box>
             </Flex>
         </Box>

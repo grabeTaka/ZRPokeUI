@@ -12,15 +12,17 @@ export const PokemonContext = React.createContext<PokemonContextType | null>(nul
 
 const PokemonProvider: React.FC<importFilesContextProps> = ({ children }) => {
     const [search, setSearch] = useState('')
+    const [emptySearch, setEmptySearch] = useState(true)
     const [abilities, setAbilities] = React.useState<string[]>([])
     const [loading, setLoading] = React.useState<boolean>(false)
 
     const toast = useToast()
 
     const handleOnSubmit = async () => {
-        console.info('handleOnSubmit')
-        console.info(search)
+
         if (!search.trim()) {
+            setAbilities([])
+            setEmptySearch(true)
             toast({
                 title: 'Ops something went wrong!',
                 description: 'Please select a pokemon',
@@ -31,20 +33,26 @@ const PokemonProvider: React.FC<importFilesContextProps> = ({ children }) => {
             })
             return
         }
-
+        setEmptySearch(false)
         setLoading(true)
         try {
             const result = await pokemonService.byName(search)
-            console.info(result)
             setAbilities(result.abilities)
         } catch (error) { 
             console.info(error)
+        } finally {
+            setLoading(false)
         }
+    }
+
+    const setInputVariable = (pokemon: string) => {
+        setSearch(pokemon)
+        
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const debouncedSave = useCallback(
-        debounce(pokemon => setSearch(pokemon), 500),
+        debounce(pokemon => setInputVariable(pokemon), 500),
         [],
     )
 
@@ -54,7 +62,7 @@ const PokemonProvider: React.FC<importFilesContextProps> = ({ children }) => {
 
 
     return (
-        <PokemonContext.Provider value={{ handleOnSubmit, handleChangeInput, abilities, loading }}>
+        <PokemonContext.Provider value={{ handleOnSubmit, handleChangeInput, abilities, loading, search, emptySearch }}>
             {children}
         </PokemonContext.Provider>
     )

@@ -13,5 +13,6 @@ export const useSearchPokemon = () => {
     return {
         handleOnSubmit: context.handleOnSubmit,
         handleChangeInput: context.handleChangeInput,
+        loading: context.loading
     }
 }

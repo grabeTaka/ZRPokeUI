@@ -8,5 +8,5 @@ export const useListAbilities = () => {
         throw new Error('You must use useListAbilities hook inside the useListAbilities')
     }
 
-    return { abilities: context.abilities}
+    return { abilities: context.abilities, search: context.search, emptySearch: context.emptySearch }
 }

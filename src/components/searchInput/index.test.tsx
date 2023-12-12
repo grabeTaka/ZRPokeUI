@@ -5,7 +5,7 @@ const handleChangeInput = () => {
 }
 test('renders SearchInput and checks input change', () => {
     const { getByPlaceholderText } = render(<SearchInput handleChangeInput={handleChangeInput}/>)
-    const input = getByPlaceholderText('Search Users')  as HTMLInputElement
+    const input = getByPlaceholderText('Search Pokemon')  as HTMLInputElement
 
     fireEvent.change(input, { target: { value: 'test' } })
     expect(input.value).toBe('test')
