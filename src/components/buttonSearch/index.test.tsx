@@ -5,7 +5,7 @@ const handleOnSubmit = () => {
     return
 }
 test('checks if button is disabled', () => {
-    const { getByRole } = render(<ButtonUpload  handleOnSubmit={handleOnSubmit} file={null} submitingCsv={false}/>)
+    const { getByRole } = render(<ButtonUpload  handleOnSubmit={handleOnSubmit} />)
     const button = getByRole('button')
 
     expect(button).toBeDisabled()

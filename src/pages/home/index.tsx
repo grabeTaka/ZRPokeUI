@@ -2,25 +2,24 @@
 import React from 'react'
 import { Box, Divider } from '@chakra-ui/react'
 
-import UserProvider from 'context/user'
-
-import CardContainer from 'components/cardContainer/index'
+import PokemonProvider from 'context/pokemon'
 import ActionsData from 'components/actionsData'
 import PageTitle from 'components/pageTitle'
+import AbilitiesContainer from 'components/abilitiesContainer'
 
 const Home: React.FC = () => {
     return (
-        <UserProvider>
+        <PokemonProvider>
             <center>
                 <Box bg='white' w='95%' p={5} mt={10} justifyContent={'center'}>
                     <PageTitle/>
                     <ActionsData/>
                     <Divider/>
-                    <CardContainer />
+                    <AbilitiesContainer/>
                 </Box>
             </center>
                 
-        </UserProvider>
+        </PokemonProvider>
     )
 }
 

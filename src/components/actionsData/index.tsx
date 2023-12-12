@@ -6,18 +6,12 @@ import {
 } from '@chakra-ui/react'
 
 import SearchInput from '../searchInput/index'
-import InputFileProps from '../inputFile/index'
-import ButtonUpload from '../buttonUpload/index'
+import ButtonSeatch from '../buttonSearch/index'
 
-import { useImportFiles } from '../../hooks/useImportFiles/useImportFiles'
+import { useSearchPokemon } from '../../hooks/useSearchPokemon/useSearchPokemon'
 
-import '../../styles/inputFile.css'
-import { useListUsers } from '../../hooks/useListUsers/useListUsers'
-
-export default function withAction() {
-
-    const {handleOnChange, handleOnSubmit, file, submitingCsv} = useImportFiles()
-    const { handleChangeInput } = useListUsers()
+export default function headerAction() {
+    const { handleChangeInput, handleOnSubmit } = useSearchPokemon()
     
     return (
         <Box width="100%" mb={10}>
@@ -25,12 +19,8 @@ export default function withAction() {
                 <Box flexBasis={{ base: '100%', md: '70%' }}>
                     <SearchInput handleChangeInput={handleChangeInput}/>
                 </Box>
-                <Box flexBasis={{ base: '100%', md: '15%' }} display="flex" justifyContent="flex-end">
-                    <InputFileProps handleOnChange={handleOnChange}/>
-                </Box>
-                
-                <Box flexBasis={{ base: '100%', md: '15%' }} display="flex" justifyContent={{ base: 'flex-start', md: 'flex-end' }}>
-                    <ButtonUpload handleOnSubmit={handleOnSubmit} file={file} submitingCsv={submitingCsv}/>
+                <Box flexBasis={{ base: '100%', md: '30%' }} display="flex" justifyContent="flex-end">
+                    <ButtonSeatch handleOnSubmit={handleOnSubmit}/>
                 </Box>
             </Flex>
         </Box>
